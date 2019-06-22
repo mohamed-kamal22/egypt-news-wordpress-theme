@@ -1,0 +1,1495 @@
+/*!
+Theme Name: news egypt
+Theme URI: http://underscores.me/
+Author: Mohamed Kamal
+Author URI: https://github.com/mohamed-kamal22
+Description: This is awordpress Theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: news-egypt
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+news egypt is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+/* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+	 ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation li {
+	float: left;
+	position: relative;
+}
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
+}
+
+.widget select {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.post,
+.page {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	/* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.no-padding
+{
+    padding-left: 0!important;
+}
+
+                /* Header */
+
+header
+{
+    overflow: hidden;
+    height: 35px;
+    background-color: #231F20;
+    position: relative;
+}
+
+header .title img
+{
+    vertical-align: middle;
+}
+
+header nav
+{
+    display: flex;
+    height: 35px;
+}
+
+header nav ul
+{
+    margin-right: auto;
+    margin-left: 15px;
+}
+
+header nav ul li
+{
+    display: inline-block;
+    list-style: none;
+    padding: 5px 25px 0 0;
+    text-transform: capitalize;
+}
+
+header nav ul li a
+{
+    color: #fff;
+}
+
+header nav ul li a:hover
+{
+    text-decoration: unset;
+    color: #fff;
+}
+
+
+nav .nav-icon
+{
+    display: inline-block;
+    padding-top: 5px;
+    margin-right: 40px;
+}
+
+nav .nav-icon a
+{
+    padding: .4rem;
+    color: #fff;
+}
+
+nav .nav-icon a .fa-search
+{
+    color: red;
+}
+
+
+nav .nav-icon a:hover
+{
+    text-decoration: unset;
+}
+
+
+header nav i.icon 
+{
+    position: absolute;
+    right: 10px;
+    top: 2px;
+    cursor: pointer;
+    z-index: 10;
+    display: none;
+    color: #fff;
+}
+
+
+
+
+@media (max-width:575px)
+{
+    header
+    {
+        height: auto;
+    }
+
+    header nav i.icon 
+    {
+        display: block;
+    }
+
+    header nav
+    {
+        display: block;
+    }
+
+    header nav ul li
+    {
+        display: none;
+        float: left;
+        width: 50%;
+        font-size: 15px;
+        padding-top:10px;
+        padding-bottom: 15px;
+    }
+
+    nav .nav-icon
+    {
+        display: none;
+        padding-top: .45rem;
+        padding-bottom: .45rem;
+        text-align: center;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px)
+{
+    header
+    {
+        height: auto;
+    }
+
+    header nav i.icon 
+    {
+        display: block;
+    }
+
+    header nav
+    {
+        display: block;
+    }
+
+    header nav ul li
+    {
+        display: none;
+        float: left;
+        width: 50%;
+        font-size: 15px;
+        padding-top:10px;
+        padding-bottom: 15px;
+    }
+
+    nav .nav-icon
+    {
+        display: none;
+        padding-top: .45rem;
+        padding-bottom: .45rem;
+        text-align: center;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 991px)
+{
+    header
+    {
+        height: auto;
+    }
+
+    header nav i.icon 
+    {
+        display: block;
+    }
+
+    header nav
+    {
+        display: block;
+    }
+
+    header nav ul li
+    {
+        display: none;
+        float: left;
+        width: 50%;
+        font-size: 15px;
+        padding-top:10px;
+        padding-bottom: 15px;
+    }
+
+    nav .nav-icon
+    {
+        display: none;
+        padding-top: .45rem;
+        padding-bottom: .45rem;
+        text-align: center;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1276px)
+{
+    header .title
+    {
+        width: 28%;
+    }
+
+    header .title img
+    {
+        width: 100%;
+        height: 100%;
+    }
+
+    header nav ul li
+    {
+        padding-right: 10px;
+    }
+
+}
+
+
+                /* Header */
+
+                /* ... Top News ... */
+
+main
+{
+    margin-top: 30px;
+}
+
+.top-news .articles
+{
+    height: 325px;
+    padding: 0 0;
+}
+
+.top-news .gradient
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0
+}
+
+.top-news .img .gradient
+{
+    background: linear-gradient(180deg,transparent 0,#000 90%);
+    width: 100%;
+    padding: 10px;
+}
+
+.category
+{
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 5px 0;
+    background-color: #dd1118;
+    color: #fff!important;
+    cursor: pointer;
+}
+
+.gradient h3
+{
+    margin-top: 0;
+    cursor: pointer;
+}
+
+.top-news .img
+{
+    background-image: url(./img/1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.small
+{
+    height: 158px;
+    padding: 0;
+    padding-left: 0px!important;
+}
+
+.card
+{
+    height: 161px;
+    padding: 0;
+}
+
+.card img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.overlay
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1.25rem;
+}
+
+.overlay .gradient
+{
+    background: linear-gradient(180deg,transparent 0,#000 90%);
+    width: 100%;
+    padding: 10px;
+}
+
+.card-text
+{
+    display: inline-block;
+    font-size: 16px;
+    color: #fff!important;
+    background-color: #c31419!important;
+    padding: 4px 8px;
+    margin: 5px 0;
+}
+
+.gradient h4
+{
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.gradient h4 a:hover
+{
+    text-decoration: none;
+}
+
+
+.small:last-child
+{
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    padding-left: 0px;
+}
+
+.advs
+{
+    background-color: #F00;
+    height: 325px;
+}
+
+.advs h2
+{
+    color: rgb(179, 178, 178);
+    font-size: .9rem;
+    padding: 10px 0;
+}
+
+.advs div
+{
+    background-color: #000;
+    height: 80%;
+}
+
+@media (max-width:575px)
+{
+    .small
+    {
+        margin-top: 10px;
+        padding-left: 15px!important;
+    }
+
+    .small:last-child
+    {
+        position: static;
+        margin-top: 10px;
+    }
+
+    .advs
+    {
+        margin-top: 15px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px)
+{
+    .small
+    {
+        margin-top: 10px;
+        padding-left: 15px!important;
+    }
+
+    .small:last-child
+    {
+        position: static;
+        margin-top: 10px;
+    }
+
+    .advs
+    {
+        margin-top: 15px;
+    }
+}
+
+                /* ... Top News ... */
+
+.hr
+{
+    border: 2px solid;
+    margin-top: 30px;
+}
+
+.h
+{
+    padding: 0 0!important;
+}
+
+                /* ... top-news2 ... */
+
+.top-news2 .title a
+{
+    text-transform: uppercase;
+    color: #c31419;
+    margin-bottom: 0;
+}
+
+.no-padding
+{
+    padding-left: 0!important;
+}
+
+.owl-item
+{
+    height: 165px!important;
+}
+
+.top-news2 .owl-carousel .item
+{
+    height: 100%;
+    position: relative;
+}
+
+.top-news2 .owl-carousel .item .item-info
+{
+    height: 100%;
+}
+
+.top-news2 .owl-carousel .item .item-info .img
+{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.top-news2 .owl-carousel .item .item-info section
+{
+    position: absolute;
+    bottom: 0;
+}
+
+
+.item .item-info .gradient
+{
+    background: linear-gradient(180deg,transparent 0,#000 90%);
+    width: 100%;
+    padding: 10px;
+    bottom: 0;
+}
+
+.item .item-info .gradient h3
+{
+    font-size: 1rem;
+}
+
+.img2
+{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.img3
+{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.img4
+{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.img5
+{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.img6
+{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.img7
+{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.img8
+{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.img9
+{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+                /* ... top-news2 ... */
+
+                /* ... Middle news ... */
+
+.middle-news .title-mid a
+{
+    text-transform: uppercase;
+    color: #c31419;
+    margin-bottom: 0;
+}
+
+.middle-news .left
+{
+    height: 500px;
+    padding-left: 0;
+    cursor: pointer;
+}
+
+.left .gradient
+{
+    background: linear-gradient(180deg,transparent 0,#000 90%);
+    width: 100%;
+    padding: 10px;
+}
+
+.middle-news .left .img
+{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100%;
+}
+
+.middle-news .left:last-child 
+{
+    padding-right: 0;
+}
+
+.middle-news .left:last-child .gradient
+{
+    width: 100%!important;
+}
+
+.middle-news .left .img .gradient
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(180deg,transparent 0,#000 90%);
+    width: 96%;
+    padding: 10px;
+}
+
+.category
+{
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 5px 0;
+    background-color: #dd1118;
+    color: #fff!important;
+    cursor: pointer;
+}
+
+.gradient h3
+{
+    margin-top: 0;
+    cursor: pointer;
+}
+
+.middle-news .left .img-left
+{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100%;
+}
+
+.middle-news .left .img-left .gradient
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 96%;
+}
+
+.ellipsis
+{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title-right a
+{
+    color: #c31419;
+    text-transform: uppercase;
+}
+
+.title-right a:hover
+{
+    color: #c31419;
+}
+
+.right .list-group a
+{
+    color: #000;
+}
+
+.right .list-group a:hover
+{
+    text-decoration: none;
+}
+
+.right .list-group span
+{
+    height: 30px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.right .list-group p
+{
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+.right .advs
+{
+    height: 210px;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+@media (max-width:575px)
+{
+    .middle-news .left
+    {
+        padding-right: 0!important;
+        
+    }
+
+    .middle-news .left:last-child 
+    {
+        margin-top: 15px;
+    }
+
+    .middle-news .left .img-left .gradient
+    {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    .middle-news .left .img .gradient
+    {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    .middle-news .right
+    {
+        margin-top: 15px;
+    }
+
+    .middle-news .right .title-right
+    {
+        padding: 0;
+    }
+
+    .middle-news .list
+    {
+        padding: 0;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px)
+{
+    .middle-news .left
+    {
+        padding-right: 0;
+    }
+
+    .middle-news .left:last-child 
+    {
+        margin-top: 15px;
+    }
+
+    .middle-news .left .img-left .gradient
+    {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    .middle-news .left .img .gradient
+    {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+    .middle-news .right .title-right
+    {
+        padding: 0;
+    }
+
+    .middle-news .list
+    {
+        padding: 0;
+    }
+
+    .middle-news .right
+    {
+        margin-top: 15px;
+    }
+}
+
+
+                /* ... Middle news ... */
+
+                /* ... end news ...  */
+
+.end-news .title a
+{
+    text-transform: uppercase;
+    color: #c31419;
+    margin-bottom: 0;
+}
+
+.end-news .left
+{
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.end-news .first
+{
+    padding-left: 0!important;
+}
+
+.end-news .subject a
+{
+    display: inline-block;
+}
+
+.end-news .subject a:hover
+{
+    text-decoration: none;
+}
+
+.end-news .subject a:first-child
+{
+    padding: 0 8px;
+    margin: 0 0 5px;
+    background-color: #0cda3c;
+    color: #fff;
+}
+
+.end-news .subject a:nth-child(2)
+{
+    line-height: 19px;
+    color: #000;
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.end-news .subject p
+{
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.end-news .subject a:last-child
+{
+    border: 1px solid;
+    font-size: 13px;
+    border-radius: 0;
+    padding: 0 5px;
+    display: block;
+    width: 22%;
+    color: #c31419;
+}
+
+.sports
+{
+    background-color: #dd1118!important;
+}
+
+.life
+{
+    background-color: #FF3FA2!important;
+}
+
+.scrolling
+{
+    height: 500px;
+    overflow-x: auto;
+}
+
+.scrolling .item
+{
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 10px;
+}
+
+.item .img
+{
+    padding: 0;
+}
+
+.scrolling .data-item
+{
+    padding: 0 5px;
+}
+
+.data-item .time
+{
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 0
+}
+
+.end-news .left .img
+{
+    padding-right: 0;
+}
+
+.scrolling .item .data-item a
+{
+    color: #000;
+}
+
+.scrolling .item .data-item a:hover
+{
+    text-decoration: none;
+}
+
+.scrolling .item .data-item a h4
+{
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    overflow: hidden;
+}
+
+.recommendations h4
+{
+    font-size: 20px;
+}
+
+.recommendations .title
+{
+    margin-bottom: 15px;
+}
+
+.card-avatar
+{
+    text-align: center;
+    border-left: 1px solid #000;
+    padding: 0 25px;
+}
+
+.card-avatar .item
+{
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+}
+
+.card-avatar h6
+{
+    color: #dd1118;
+    cursor: pointer;
+}
+
+.card-avatar h5
+{
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.card-avatar .item img
+{
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+@media (max-width:575px)
+{
+    .end-news .subject
+    {
+        padding: 0 5px;
+    }
+
+    .card-avatar
+    {
+        border-left: none;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px)
+{
+    .end-news .subject
+    {
+        padding: 0 10px;
+    }
+
+    .end-news .right
+    {
+        padding: 0;
+    }
+
+    .end-news .first
+    {
+        padding: 0;
+    }
+    .card-avatar
+    {
+        border-left: none;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 991px)
+{
+    .end-news .left img
+    {
+        height: 265px;
+    }
+
+    .end-news .left .img
+    {
+        padding-right: 3px;
+    }
+
+    .end-news .subject
+    {
+        padding: 0;
+    }
+
+    .end-news .subject a:last-child
+    {
+        font-size: 10px;
+        border-radius: 0;
+        padding: 0 5px;
+        display: block;
+        width: 30%;
+        color: #c31419;
+    }
+
+    .scrolling .item .data-item a h4
+    {
+        font-size: 16px;
+        line-height: 20px;
+        height: 80px;    
+    }
+    
+}
+
+
+                /* ... end news ...  */
+
+                /* ... footer ...  */
+
+footer
+{
+    background-color: #231F20;
+    color: #fff;
+    padding: 15px 0;
+}
+
+footer .title img
+{
+    width: 100%;
+}
+
+footer ul li
+{
+    display: inline-block;
+    list-style: none;
+    padding: 10px 16px;
+}
+
+footer .social
+{
+    text-align: center;
+}
+
+footer .social i
+{
+    padding: 9px 17px;
+    font-size: 1.45em;
+}
+
+footer .copyrights
+{
+    padding-top: 15px;
+    text-align: center;
+}
+
+.scrollTop
+{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    margin-bottom: 30px;
+    background: #CC444A;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+    padding-top: 9px;
+}
